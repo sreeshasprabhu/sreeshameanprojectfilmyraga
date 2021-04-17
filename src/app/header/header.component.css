@@ -1,0 +1,7 @@
+nav{
+    background-color:#9800CC ;
+}
+.header{
+    font-size: 21px;
+}
+#navBarSearchForm input[type=text]{width:600px !important;}

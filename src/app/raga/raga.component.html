@@ -1,0 +1,68 @@
+<div class="main">
+    <div class="left">
+        <p><a routerLink="/raga">Ragas</a></p>
+        <p><a routerLink="/user">Users</a></p>
+
+    </div>
+<div class="right">
+<div class='card'>    
+    <div class='card-body'>
+     
+        <div class="table responsive">
+            <table class="table table-striped table-hover display" id="datatableexample" >            
+                <thead>
+                    <tr>                       
+                        <th scope="col" >Film Song</th>
+                        <th scope="col" >Language</th>
+                        <th scope="col" >Film</th>                        
+                        <th scope="col" >Music Director</th> 
+                        <th scope="col" >Raaga</th>
+                        <th scope="col" *ngIf="_auth.loggedIn()" >Options</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- <tr>
+                    <th scope="row">1</th>
+                    <td>Mark</td>
+                    <td>Otto</td>
+                    <td>@mdo</td>
+                  </tr> -->
+                  <tr class="table-primary" *ngFor='let song of songs'>
+                    <!-- <th scope="row">1</th> -->
+                    <td>{{ song.filmSong }}</td>
+                    <td>{{ song.language }}</td>
+                    <td>{{ song.film }}</td>
+                    <td>{{ song.musicDirector  }}</td>
+                    <td>{{ song.raga}}</td>
+                    <td>
+                      
+                      <button class="btn btn-warning mr-2  button" style="cursor:pointer" (click)="editProduct(song)" *ngIf="_auth.loggedIn()" style="margin-left: 20px;"> Edit</button>
+                      <button class="btn btn-danger    " style="cursor:pointer" (click)="deleteProduct(song)" *ngIf="_auth.loggedIn()"> Delete</button>
+                      
+                    </td>
+                  </tr>
+                    
+                  
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+<!-- <table class="table">
+    <thead>
+      <tr>        
+        <th scope="col">Film Songs</th>
+        <th scope="col">Raaga</th>
+      </tr>
+    </thead>
+    <tbody>
+
+    </tbody>
+</table> -->
+<!-- <script>
+$(document).ready( function () {
+  $('ragastable').DataTable();
+} );
+</script> -->
+</div>
+</div>
